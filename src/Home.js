@@ -27,7 +27,7 @@ const Home = (props) => {
             <View style={{ position: 'absolute',alignSelf:'center'}}>
                 {/* <Text style={{ marginBottom: 10 }}>hi</Text> */}
                 <View style={{marginTop:40}}>
-                    {/* <Text>Hello</Text> */}
+                    <Text>Hello</Text>
                 </View>
                 <FlatList
                     data={cities}
