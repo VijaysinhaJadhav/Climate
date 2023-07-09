@@ -24,10 +24,12 @@ const Home = (props) => {
     return (
         <View style={{ flex: 1 }}>
             <ImageBackground source={require('../../ApiProject/assets/images/backImage1.jpg')} style={{ flex: 1 }} />
-            <View style={{ position: 'absolute' }}>
-                <Text style={{ marginBottom: 10 }}>Hello</Text>
+            <View style={{ position: 'absolute',alignSelf:'center'}}>
+                {/* <Text style={{ marginBottom: 10 }}>hi</Text> */}
+                <View style={{marginTop:40}}>
+                    {/* <Text>Hello</Text> */}
+                </View>
                 <FlatList
-                    horizontal
                     data={cities}
                     renderItem={({ item }) => (
                         <Card image={item.image} name={item.name} navigation={props.navigation} />
@@ -43,3 +45,4 @@ export default Home
 const styles = StyleSheet.create({
 
 })
+

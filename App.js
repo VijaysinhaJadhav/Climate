@@ -13,10 +13,10 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}}>
-        {/* <Stack.Screen name='Home' component={Home}/> 
-        <Stack.Screen name='Details' component={Details}/>  */}
-        <Stack.Screen name='Test' component={Test}/> 
-        <Stack.Screen name='Scanner' component={Scanner}/> 
+        <Stack.Screen name='Home' component={Home}/> 
+        <Stack.Screen name='Details' component={Details}/> 
+        {/* <Stack.Screen name='Test' component={Test}/> 
+        <Stack.Screen name='Scanner' component={Scanner}/>  */}
       </Stack.Navigator>
     </NavigationContainer>
   )
