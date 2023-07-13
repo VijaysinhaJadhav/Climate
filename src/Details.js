@@ -11,7 +11,7 @@ const Details = ({ route }) => {
             .then(res => {
                 console.log(res)
                 setData(res)
-            }) 
+            })  
             .catch(err => console.log(err))
     }, [])
     const Details = ({title,value}) => {
