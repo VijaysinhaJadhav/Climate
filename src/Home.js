@@ -6,24 +6,24 @@ const Home = (props) => {
     const cities = [
         {
             name: 'New Delhi',
-            image: require('../../ApiProject/assets/images/newDelhi.jpg')
+            image: require('../assets/images/newDelhi.jpg')
         },
         {
             name: 'New York',
-            image: require('../../ApiProject/assets/images/newYork.jpg')
+            image: require('../assets/images/newYork.jpg')
         },
         {
             name: 'London',
-            image: require('../../ApiProject/assets/images/london.jpg')
+            image: require('../assets/images/london.jpg')
         },
         {
             name: 'New Jersey',
-            image: require('../../ApiProject/assets/images/newJersey.jpg')
+            image: require('../assets/images/newJersey.jpg')
         },
     ]
     return (
         <View style={{ flex: 1 }}>
-            <ImageBackground source={require('../../ApiProject/assets/images/backImage1.jpg')} style={{ flex: 1 }} />
+            <ImageBackground source={require('../assets/images/backImage1.jpg')} style={{ flex: 1 }} />
             <View style={{ position: 'absolute',alignSelf:'center'}}>
                 {/* <Text style={{ marginBottom: 10 }}>hi</Text> */}
                 <View style={{marginTop:40}}>

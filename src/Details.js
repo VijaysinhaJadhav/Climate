@@ -23,7 +23,7 @@ const Details = ({ route }) => {
     }
     return (
         <View style={{ flex: 1 }}>
-            <ImageBackground source={require('../../ApiProject/assets/images/backImage1.jpg')} style={{ flex: 1 }} >
+            <ImageBackground source={require('../assets/images/backImage1.jpg')} style={{ flex: 1 }} >
                 {
                     data ? <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         <Details title="Country" value={data['sys']['country']}/>
