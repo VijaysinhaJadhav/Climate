@@ -15,6 +15,7 @@ const App = () => {
       <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name='Home' component={Home}/> 
         <Stack.Screen name='Details' component={Details}/> 
+        {/* testing */}
         {/* <Stack.Screen name='Test' component={Test}/> 
         <Stack.Screen name='Scanner' component={Scanner}/>  */}
       </Stack.Navigator>
