@@ -5,7 +5,7 @@ import Card from './Card'
 const Home = (props) => {
     const cities = [
         {
-            name: 'New Delhi',
+            name: 'New Delhi', 
             image: require('../assets/images/newDelhi.jpg')
         },
         {
