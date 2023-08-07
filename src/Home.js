@@ -34,31 +34,36 @@ const Home = props => {
   const handleLogout = () => {
     auth()
       .signOut()
-      .then(response => Alert.alert('User signed out!'))
+      .then(response => {
+        Alert.alert('User signed out!')
+        props.navigation.navigate('SignUpScreen');
+      })
       .catch(error => {
         Alert.alert('Not able to log out');
       });
   };
+
   return (
     <View style={{flex: 1}}>
       <ImageBackground
         source={require('../assets/images/backImage1.jpg')}
         style={{flex: 1}}
       />
-      <View style={{position: 'absolute', alignSelf:'flex-end'}}>
-          <TouchableOpacity onPress={handleLogout} style={{margin:16}}>
-            <Image
-              source={require('../assets/images/power-off.png')}
-              style={{height: 30, width:30, tintColor:'blue'}}
-            />
-          </TouchableOpacity>
-        </View>
+      <View style={{position: 'absolute', alignSelf: 'flex-end'}}>
+        <TouchableOpacity onPress={handleLogout} style={{margin: 16}}>
+          <Image
+            source={require('../assets/images/power-off.png')}
+            style={{height: 30, width: 30, tintColor: 'blue'}}
+          />
+        </TouchableOpacity>
+      </View>
       <View style={{position: 'absolute', alignSelf: 'center'}}>
         {/* <Text style={{ marginBottom: 10 }}>hi</Text> */}
-        <View style={{marginTop: 40}}>
+        {/* <View style={{marginTop: 40}}>
           <Text>Hello</Text>
-        </View>
+        </View> */}
         <FlatList
+        style={{marginTop:40}}
           data={cities}
           renderItem={({item}) => (
             <Card

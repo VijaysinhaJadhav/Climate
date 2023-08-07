@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 
-const SignUpScreen = () => {
+const SignUpScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -36,6 +36,11 @@ const SignUpScreen = () => {
       });
   };
 
+  const handleLoginClick = () => {
+    // Implement navigation to the login screen or any other action you want
+    console.log('Login button clicked');
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Sign Up</Text>
@@ -58,6 +63,14 @@ const SignUpScreen = () => {
       <TouchableOpacity style={styles.button} onPress={handleSignUp}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
+
+      <View style={styles.loginContainer}>
+        <Text style={styles.loginText}>Already Signed Up? </Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('LoginScreen')}>
+          <Text style={styles.loginLinkText}>Click here to login</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -92,6 +105,19 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  loginContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  loginText: {
+    fontSize: 16,
+  },
+  loginLinkText: {
+    color: 'blue',
     fontSize: 16,
     fontWeight: 'bold',
   },

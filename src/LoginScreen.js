@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -8,10 +8,12 @@ import {
   Alert,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigation = useNavigation();
 
   const handleLogin = () => {
     // Here, you can implement your login logic.
@@ -22,6 +24,8 @@ const LoginScreen = () => {
       .then(response => {
         Alert.alert('Successfully Logged In');
         console.log('response ', response);
+        // Navigate to 'Home' screen here after successful login
+        navigation.navigate('Home');
       })
       .catch(error => {
         if (error.code === 'auth/wrong-password') {
@@ -58,7 +62,6 @@ const LoginScreen = () => {
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-      
     </View>
   );
 };

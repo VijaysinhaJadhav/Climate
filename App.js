@@ -12,7 +12,7 @@ import auth from '@react-native-firebase/auth';
 
 const Stack = createNativeStackNavigator();
 
-const Safe = () => {
+const App = () => {
   const [user, setUser] = useState();
   console.log('user :', user);
   const onAuthStateChanged = user => {
@@ -23,25 +23,28 @@ const Safe = () => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
   }, []);
+
   return (
     <>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
-          {user ? (
-            <Stack.Screen name="Home" component={Home} />
-          ) : (
-            <Stack.Screen name="LoginScreen" component={LoginScreen} />
-          )}
+          {/* {user ? ( */}
+          <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+          <Stack.Screen name="Home" component={Home} />
+          {/* ) : ( */}
+          <Stack.Screen name="LoginScreen" component={LoginScreen} />
+          {/* )} */}
           <Stack.Screen name="Details" component={Details} />
           {/* <Stack.Screen name='SignUpScreen' component={SignUpScreen}/>  */}
-          {/* <Stack.Screen name='Test' component={Test}/> 
-        <Stack.Screen name='Scanner' component={Scanner}/>  */}
+
+          {/* <Stack.Screen name='Test' component={Test}/>  */}
+          {/*<Stack.Screen name='Scanner' component={Scanner}/>  */}
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
 };
 
-export default Safe;
+export default App;
 
 const styles = StyleSheet.create({});
